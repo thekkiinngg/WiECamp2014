@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="29"/>
+    </properties>
+    <variables>
+        <cm/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="cm" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <Comment function="Code" commented="false" constantValue=" * Minibloq doesn't support loop function so we need a while loop" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </while>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <Comment function="Code" commented="false" constantValue=" measures the distance with Sparki's eyes" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <VariableSetter function="Setter" commented="false" instanceName="cm" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <ping function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="Distance: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <Comment function="Code" commented="false" constantValue=" tells the distance to the computer" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="cm" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <Comment function="Code" commented="false" constantValue=" * Haven't implemented println yet so use '\n'" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue=" cm\n" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <Comment function="Code" commented="false" constantValue=" * Number block doesn't support negative numbers..." paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue=" * If statements are only if/else " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue=" make sure its not too close or too far" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberGreaterThanOrEqual function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="cm" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberGreaterThanOrEqual>
+        </if>
+        <Comment function="Code" commented="false" constantValue=" if the distance measured is less than 10 centimeters" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberLowerThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="cm" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="10" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberLowerThan>
+        </if>
+        <Comment function="Code" commented="false" constantValue=" * sparki.beep() doesn't exist, freq = 4000, duration = 200" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue=" * provides the same functionality" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue=" beep!" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <beep function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="4000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="200" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </beep>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDUpdate function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="100" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>
