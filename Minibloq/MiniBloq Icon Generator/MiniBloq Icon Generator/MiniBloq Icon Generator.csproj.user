@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartWorkingDirectory>
     </StartWorkingDirectory>
+    <StartArguments>-v LCD.svg LCDIcon.json</StartArguments>
   </PropertyGroup>
 </Project>

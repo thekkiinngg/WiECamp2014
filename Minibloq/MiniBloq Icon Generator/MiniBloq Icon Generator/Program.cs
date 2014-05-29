@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Diagnostics;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MiniBloq_Icon_Generator
 {
@@ -13,73 +15,126 @@ namespace MiniBloq_Icon_Generator
 	{
 		static void Main( string[] args )
 		{
-			XElement svg = XElement.Load( "LCD.svg" );
+			bool DebugPrint = false;
 
-			Dictionary<string, List<string>> outputfiles = new Dictionary<string, List<string>>();
+			// Check for two command line parameters
+			if( args.Length != 2 )
+			{
+				if( args.Length == 3 )
+				{
+					if( args[ 0 ] == "-v" )
+					{
+						DebugPrint = true;
+						args = args.Where( s => s != args[ 0 ] ).ToArray();
+					}
+				}
+				else
+				{
+					Console.WriteLine( "Error: Invalid command line parameters" );
+					Console.WriteLine( "Usage: " + Environment.GetCommandLineArgs()[ 0 ] + " <svg file> <json configuration file>" );
+					Console.ReadKey( true );
+					Environment.Exit( 1 );
+				}
+			}
 
-			outputfiles.Add( "LCDPickerDefault", new List<string> { "Default", "Icon" } );
-			outputfiles.Add( "LCDPickerHover", new List<string> { "Hover", "Icon" } );
-			outputfiles.Add( "LCDPickerDisabled", new List<string> { "Disabled", "Icon" } );
-			outputfiles.Add( "LCDPickerPressed", new List<string> { "Pressed", "Icon" } );
-			outputfiles.Add( "LCDPickerBlockDefault", new List<string> { "Icon" } );
-			outputfiles.Add( "LCDPickerBlockDisabled", new List<string> { "Icon" } );
+			if( DebugPrint )
+			{
+				Console.WriteLine( "Current working directory: " + Directory.GetCurrentDirectory() );
+			}
 
-			outputfiles.Add( "LCDPrintTextDefault", new List<string> { "Default", "Icon", "IconText" } );
-			outputfiles.Add( "LCDPrintTextHover", new List<string> { "Hover", "Icon", "IconText" } );
-			outputfiles.Add( "LCDPrintTextDisabled", new List<string> { "Disabled", "Icon", "IconText" } );
-			outputfiles.Add( "LCDPrintTextPressed", new List<string> { "Pressed", "Icon", "IconText" } );
-			outputfiles.Add( "LCDPrintTextBlockDefault", new List<string> { "Icon", "IconText" } );
-			outputfiles.Add( "LCDPrintTextBlockDisabled", new List<string> { "Icon", "IconText" } );
+			// Check to see if svg file exists
+			if( !File.Exists( args[ 0 ] ) )
+			{
+				Console.WriteLine( "Error: Invalid command line parameters" );
+				Console.WriteLine( "File \"" + args[ 0 ] + "\" does not exist" );
+				Console.ReadKey( true );
+				Environment.Exit( 2 );
+			}
 
-			outputfiles.Add( "LCDPrintNumberDefault", new List<string> { "Default", "Icon", "IconNumber" } );
-			outputfiles.Add( "LCDPrintNumberHover", new List<string> { "Hover", "Icon", "IconNumber" } );
-			outputfiles.Add( "LCDPrintNumberDisabled", new List<string> { "Disabled", "Icon", "IconNumber" } );
-			outputfiles.Add( "LCDPrintNumberPressed", new List<string> { "Pressed", "Icon", "IconNumber" } );
-			outputfiles.Add( "LCDPrintNumberBlockDefault", new List<string> { "Icon", "IconNumber" } );
-			outputfiles.Add( "LCDPrintNumberBlockDisabled", new List<string> { "Icon", "IconNumber" } );
+			// Check to see if json file exists
+			if( !File.Exists( args[ 1 ] ) )
+			{
+				Console.WriteLine( "Error: Invalid command line parameters" );
+				Console.WriteLine( "File \"" + args[ 1 ] + "\" does not exist" );
+				Console.ReadKey( true );
+				Environment.Exit( 3 );
+			}
 
-			outputfiles.Add( "LCDClearDefault", new List<string> { "Default", "IconClear" } );
-			outputfiles.Add( "LCDClearHover", new List<string> { "Hover", "IconClear" } );
-			outputfiles.Add( "LCDClearDisabled", new List<string> { "Disabled", "IconClear" } );
-			outputfiles.Add( "LCDClearPressed", new List<string> { "Pressed", "IconClear" } );
-			outputfiles.Add( "LCDClearBlockDefault", new List<string> { "IconClear" } );
-			outputfiles.Add( "LCDClearBlockDisabled", new List<string> { "IconClear" } );
+			// Load SVG file
+			XElement svg = XElement.Load( args[ 0 ] );
 
-			outputfiles.Add( "LCDUpdateDefault", new List<string> { "Default", "IconUpdate" } );
-			outputfiles.Add( "LCDUpdateHover", new List<string> { "Hover", "IconUpdate" } );
-			outputfiles.Add( "LCDUpdateDisabled", new List<string> { "Disabled", "IconUpdate" } );
-			outputfiles.Add( "LCDUpdatePressed", new List<string> { "Pressed", "IconUpdate" } );
-			outputfiles.Add( "LCDUpdateBlockDefault", new List<string> { "IconUpdate" } );
-			outputfiles.Add( "LCDUpdateBlockDisabled", new List<string> { "IconUpdate" } );
+			// Load JSON formatted configuration file
+			Dictionary<string, List<string>> outputfiles = JsonConvert.DeserializeObject< Dictionary< string, List<string>>>( File.ReadAllText( args[ 1 ] ) );
 
 			if( svg != null )
 			{
 				foreach( KeyValuePair<string, List<string>> kv in outputfiles )
 				{
-					Console.WriteLine( "File: " + kv.Key );
+					if( DebugPrint )
+						Console.WriteLine( "File: " + kv.Key );
+
+					// Create a new copy of the SVG XML tree
 					XElement newsvg = new XElement( svg );
+
+					// Layers are defined with the `<g>` tag
 					IEnumerable<XElement> layers = newsvg.Elements( "{http://www.w3.org/2000/svg}g" );
 					Queue<XElement> unwantedlayers = new Queue<XElement>();
+
+					// Layers to include in the current PNG
+					List<string> imagelayers = new List<string>( kv.Value );
+
+					// Search through layers in SVG
 					foreach( XElement layer in layers )
 					{
 						if( layer.Attribute( "id" ) != null )
 						{
-							if( !kv.Value.Contains( (string)( layer.Attribute( "id" ) ) ) )
+							if( !imagelayers.Contains( ( string )( layer.Attribute( "id" ) ) ) )
 							{
-								Console.WriteLine( "Removing: " + layer.Attribute( "id" ) );
+								if( DebugPrint )
+									Console.WriteLine( "Removing: " + layer.Attribute( "id" ) );
+
+								// current layer isn't needed, add it to a queue for deletion after processing
 								unwantedlayers.Enqueue( layer );
+							}
+							else
+							{
+								if( DebugPrint )
+									Console.WriteLine( "Keeping: " + layer.Attribute( "id" ) );
+
+								// Layer was found, so no need for search remaining layers for it
+								imagelayers.Remove( (string)layer.Attribute( "id" ) );
 							}
 						}
 					}
 
+					// Warn if a layer doesn't exist
+					if( imagelayers.Count > 0 )
+					{
+						Console.WriteLine( "Warning: Not all layers found for " + kv.Key + "\n" );
+						Console.WriteLine( "Requested layers: " );
+
+						foreach( string s in imagelayers )
+							Console.WriteLine( "\t" + s );
+
+						Console.WriteLine( "" );
+						Console.WriteLine( "Available layers: " );
+
+						foreach( XElement layer in layers )
+							Console.WriteLine( "\t" + ( string )layer.Attribute( "id" ) );
+					}
+
+					// Remove unwanted layers from base SVG
 					while( unwantedlayers.Count > 0 )
 					{
 						unwantedlayers.Dequeue().Remove();
 					}
 
-					Console.WriteLine( "Writing " + kv.Key + ".svg" );
+					// save SVG file
+					if( DebugPrint )
+						Console.WriteLine( "Writing " + kv.Key + ".svg" );
 					newsvg.Save( kv.Key + ".svg" );
 
+					// invoke Imagemagick convert to create a PNG from the SVG
 					Process process = new Process();
 					ProcessStartInfo startinfo = new ProcessStartInfo();
 					startinfo.WindowStyle = ProcessWindowStyle.Hidden;
@@ -87,10 +142,27 @@ namespace MiniBloq_Icon_Generator
 					startinfo.Arguments = "/C convert -background none -density 100 -resize 256x256 -depth 32 " + kv.Key + ".svg " + kv.Key + ".png";
 					process.StartInfo = startinfo;
 					process.Start();
+
+					// Wait for convert operation to complete
+					if( DebugPrint )
+						Console.WriteLine( "Creating " + kv.Key + ".png" );
+					process.WaitForExit();
+
+					// delete temporary svg file
+					if( DebugPrint )
+						Console.WriteLine( "Removing temporary SVG" );
+					File.Delete( kv.Key + ".svg" );
+
+					if( DebugPrint )
+						Console.WriteLine( "" );
 				}
 			}
 
-			//Console.ReadKey( true );
+			if( DebugPrint )
+			{
+				Console.WriteLine( "Press any key to continue..." );
+				Console.ReadKey( true );
+			}
 		}
 	}
 }
