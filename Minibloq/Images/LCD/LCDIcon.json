@@ -1,0 +1,37 @@
+{
+	'LCDPickerDefault' : [ 'Default', 'Icon' ],
+	'LCDPickerHover' : [ 'Hover', 'Icon' ],
+	'LCDPickerDisabled' : [ 'Disabled', 'Icon' ],
+	'LCDPickerPressed' : [ 'Pressed', 'Icon' ],
+	'LCDPickerBlockDefault' : [ 'Icon' ],
+	'LCDPickerBlockDisabled' : [ 'Icon' ],
+	
+	'LCDPrintTextDefault' : [ 'Default', 'Icon', 'IconText' ],
+	'LCDPrintTextHover' : [ 'Hover', 'Icon', 'IconText' ],
+	'LCDPrintTextDisabled' : [ 'Disabled', 'Icon', 'IconText' ],
+	'LCDPrintTextPressed' : [ 'Pressed', 'Icon', 'IconText' ],
+	'LCDPrintTextBlockDefault' : [ 'Icon', 'IconText' ],
+	'LCDPrintTextBlockDisabled' : [ 'Icon', 'IconText' ],
+	
+	'LCDPrintNumberDefault' : [ 'Default', 'Icon', 'IconNumber' ],
+	'LCDPrintNumberHover' : [ 'Hover', 'Icon', 'IconNumber' ],
+	'LCDPrintNumberDisabled' : [ 'Disabled', 'Icon', 'IconNumber' ],
+	'LCDPrintNumberPressed' : [ 'Pressed', 'Icon', 'IconNumber' ],
+	'LCDPrintNumberBlockDefault' : [ 'Icon', 'IconNumber' ],
+	'LCDPrintNumberBlockDisabled' : [ 'Icon', 'IconNumber' ],
+	
+	'LCDClearDefault' : [ 'Default', 'IconClear' ],
+	'LCDClearHover' : [ 'Hover', 'IconClear' ],
+	'LCDClearDisabled' : [ 'Disabled', 'IconClear' ],
+	'LCDClearPressed' : [ 'Pressed', 'IconClear' ],
+	'LCDClearBlockDefault' : [ 'IconClear' ],
+	'LCDClearBlockDisabled' : [ 'IconClear' ],
+	
+	'LCDUpdateDefault' : [ 'Default', 'IconUpdate' ],
+	'LCDUpdateHover' : [ 'Hover', 'IconUpdate' ],
+	'LCDUpdateDisabled' : [ 'Disabled', 'IconUpdate' ],
+	'LCDUpdatePressed' : [ 'Pressed', 'IconUpdate' ],
+	'LCDUpdateBlockDefault' : [ 'IconUpdate' ],
+	'LCDUpdateBlockDisabled' : [ 'IconUpdate' ]
+}
+
