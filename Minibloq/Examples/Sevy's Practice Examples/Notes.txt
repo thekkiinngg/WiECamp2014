@@ -1,5 +1,5 @@
 6/5/2014
-11:00-1:00
+11:00am-3:00pm
 1. Basic Code - does nothing, like it's supposed to
 2. Variables
 	1. Arrays - no support for arrrays or characters - can't store data or text, fine for less advanced applications
@@ -10,10 +10,37 @@
 	2. Things might get repetitive, but I guess that's what looping is for
 4. Controls
 	1. Beep - no default value, that's fine, just have to specify frequency and duration
-	2. Angry emoticon does not work
+	2. Emoticons work, but they print small and in the corner
 	3. While Loop and If statement are less intuitive, click = (or something else) to get more options
 	4. No switch statements, can get around it with if statements
 	5. IR sensor not implemented yet
 5. Accelerometer
 	1. No printline block (does newlines manually) - have to use print number for variables
 	2. Includes gravity
+6. Buzzer
+	1. Remember that you can't have the duration be a fraction of a millisecond, otherwise it's pretty straightforward
+7. Gripper
+	1. Doesn't close all the way - is there a way to change the amount the gripper closes or opens?
+8. Infrared_LED - sendIR NOT YET IMPLEMENTED
+9. Infrared_Reflectance
+	1.
+10. LCD
+	1. Bitmap, Cicles, Lines, Pixels, Printline, Rectangles - NOT IMPLEMENTED - no need to implement
+	2. Only print() is implemented - that's enough for this application
+11. Light
+	1. Find this in Tooltip
+	2. Touching the sensor barely reduces the values
+12. Magnetometer
+	1. Seems kind of difficult to apply this
+13. Remote
+	1. Limited success - keeps receiving signals after the button is pressed
+14. RGB - works as expected
+15. Servo
+	1. Servo can't actually turn full 90 degrees, but works pretty well otherwise
+16. Status_LED - port 13
+	1. There's an error, it says D13 is not declared in this scope
+	2. Won't let me use digitalwrite directly with that pin a second time
+17. Ultrasonic_Range_Finder
+	1. code reads "robot.ping_single" instead of sparki - changed code and it works!
+18. Wheels
+	1. No moveStop() function

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="25"/>
+    </properties>
+    <variables>
+        <edge_left/>
+        <line_left/>
+        <line_center/>
+        <line_right/>
+        <edge_right/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="edge_left" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="line_left" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="line_center" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="line_right" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="edge_right" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </while>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <VariableSetter function="Setter" commented="false" instanceName="edge_left" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <edgeLeft function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="line_left" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <lineLeft function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="line_center" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <lineCenter function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="line_right" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <lineRight function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="edge_right" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <edgeRight function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="Edge left: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <edgeLeft function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="\nLine left: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <lineLeft function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="\nLine center: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <lineCenter function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="\nLine right: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <lineRight function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <textConstant function="Constant" commented="false" constantValue="\nEdge right: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintText>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <edgeRight function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDUpdate function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>

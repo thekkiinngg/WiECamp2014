@@ -13,32 +13,32 @@
     <blocks>
         <ComponentStart function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
         <VariableInit function="Setter" commented="false" constantValue="x" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelX function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </VariableInit>
         <VariableInit function="Setter" commented="false" constantValue="y" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelY function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </VariableInit>
         <VariableInit function="Setter" commented="false" constantValue="z" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelZ function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </VariableInit>
         <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </while>
-        <VariableSetter function="Setter" commented="false" instanceName="x" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelX function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
-        </VariableSetter>
-        <VariableSetter function="Setter" commented="false" instanceName="y" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelY function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
-        </VariableSetter>
-        <VariableSetter function="Setter" commented="false" instanceName="z" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <accelZ function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
-        </VariableSetter>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </LCDPrint>
+        <VariableSetter function="Setter" commented="false" instanceName="x" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <magX function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="y" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <magY function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <VariableSetter function="Setter" commented="false" instanceName="z" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <magZ function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-                <textConstant function="Constant" commented="false" constantValue="X = " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <textConstant function="Constant" commented="false" constantValue="Mag X: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
             </LCDPrintText>
         </LCDPrint>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
@@ -48,7 +48,7 @@
         </LCDPrint>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-                <textConstant function="Constant" commented="false" constantValue="\nY = " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <textConstant function="Constant" commented="false" constantValue="\nMag Y: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
             </LCDPrintText>
         </LCDPrint>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
@@ -58,7 +58,7 @@
         </LCDPrint>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <LCDPrintText function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-                <textConstant function="Constant" commented="false" constantValue="\nZ = " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <textConstant function="Constant" commented="false" constantValue="\nMag Z: " paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
             </LCDPrintText>
         </LCDPrint>
         <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
