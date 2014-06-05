@@ -1,5 +1,5 @@
 6/5/2014
-11:00am-3:00pm
+11:00am-4:00pm
 1. Basic Code - does nothing, like it's supposed to
 2. Variables
 	1. Arrays - no support for arrrays or characters - can't store data or text, fine for less advanced applications
@@ -14,6 +14,7 @@
 	3. While Loop and If statement are less intuitive, click = (or something else) to get more options
 	4. No switch statements, can get around it with if statements
 	5. IR sensor not implemented yet
+******************************************************************************************************************	
 5. Accelerometer
 	1. No printline block (does newlines manually) - have to use print number for variables
 	2. Includes gravity
@@ -44,3 +45,11 @@
 	1. code reads "robot.ping_single" instead of sparki - changed code and it works!
 18. Wheels
 	1. No moveStop() function
+*****************************************************************************************************
+19. Avoid Light
+	
+	
+Sparki should be able to go faster: 
+1. Change move_speed in sparki.cpp
+2. Have fresh AA batteries - not how steppers work?
+http://forum.arcbotics.com/viewtopic.php?t=889

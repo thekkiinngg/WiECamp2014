@@ -47,7 +47,7 @@
             </numberEqual>
         </if>
         <moveForward function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </moveForward>
         <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
         <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
@@ -58,7 +58,7 @@
             </numberEqual>
         </if>
         <moveBackward function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </moveBackward>
         <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
         <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
@@ -69,7 +69,7 @@
             </numberEqual>
         </if>
         <moveLeft function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </moveLeft>
         <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
         <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
@@ -80,7 +80,7 @@
             </numberEqual>
         </if>
         <moveRight function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
-            <numberConstant function="Constant" commented="false" constantValue="2" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
         </moveRight>
         <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
         <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>

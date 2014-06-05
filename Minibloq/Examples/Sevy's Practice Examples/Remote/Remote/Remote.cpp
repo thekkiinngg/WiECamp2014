@@ -13,28 +13,28 @@ void setup()
 			sparki.print(code);
 			if(((int)(code)==(int)(70)))
 			{
-				sparki.moveForward(2);
+				sparki.moveForward(0);
 			}
 			else
 			{
 			}
 			if(((int)(code)==(int)(21)))
 			{
-				sparki.moveBackward(2);
+				sparki.moveBackward(0);
 			}
 			else
 			{
 			}
 			if(((int)(code)==(int)(68)))
 			{
-				sparki.moveLeft(2);
+				sparki.moveLeft(0);
 			}
 			else
 			{
 			}
 			if(((int)(code)==(int)(67)))
 			{
-				sparki.moveRight(2);
+				sparki.moveRight(0);
 			}
 			else
 			{
