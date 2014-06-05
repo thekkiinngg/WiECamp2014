@@ -1,0 +1,19 @@
+6/5/2014
+11:00-1:00
+1. Basic Code - does nothing, like it's supposed to
+2. Variables
+	1. Arrays - no support for arrrays or characters - can't store data or text, fine for less advanced applications
+	2. Euler's number is not defined (no reason they'd use it, but it is a button)
+	3. Numbers are float by default - might need ability to round - can work around it with greater than and less than
+3. Functions
+	1. Blocks are as close to functions as this goes. Everything is defined within setup(), so I guess that's okay
+	2. Things might get repetitive, but I guess that's what looping is for
+4. Controls
+	1. Beep - no default value, that's fine, just have to specify frequency and duration
+	2. Angry emoticon does not work
+	3. While Loop and If statement are less intuitive, click = (or something else) to get more options
+	4. No switch statements, can get around it with if statements
+	5. IR sensor not implemented yet
+5. Accelerometer
+	1. No printline block (does newlines manually) - have to use print number for variables
+	2. Includes gravity
