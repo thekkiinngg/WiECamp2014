@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="35"/>
+    </properties>
+    <variables>
+        <loopcounter/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="loopcounter" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </while>
+        <Comment function="Code" commented="false" constantValue=" will turn the LED on" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <IOPin function="Setter" commented="false" instanceName="STATUS_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue=" wait 0.5 seconds" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="500" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <Comment function="Code" commented="false" constantValue=" will turn the LED off" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <IOPin function="Setter" commented="false" instanceName="STATUS_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue=" wait 0.5 seconds" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="500" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <Comment function="Code" commented="false" constantValue=" pulse the LED on" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue="* for loop doesn't give access to loop counter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <repeat function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="255" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </repeat>
+        <Comment function="Code" commented="false" constantValue=" * added for debugging" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="loopcounter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDUpdate function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <Comment function="Code" commented="false" constantValue=" * Currently, AnalogWrite doesn't work. bug in Arduino code" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <analogWrite function="Setter" commented="false" instanceName="STATUS_LED_PWM" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <VariableGetter function="Getter" commented="false" instanceName="loopcounter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </analogWrite>
+        <VariableSetter function="Setter" commented="false" instanceName="loopcounter" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberAdd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="loopcounter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberAdd>
+        </VariableSetter>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="10" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <repeatEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <VariableSetter function="Setter" commented="false" instanceName="loopcounter" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="255" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <Comment function="Code" commented="false" constantValue=" pulse the LED off" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <repeat function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="255" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </repeat>
+        <Comment function="Code" commented="false" constantValue=" * added for debugging" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="loopcounter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDUpdate function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <analogWrite function="Setter" commented="false" instanceName="STATUS_LED_PWM" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="130" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </analogWrite>
+        <VariableSetter function="Setter" commented="false" instanceName="loopcounter" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberSub function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="loopcounter" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberSub>
+        </VariableSetter>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="10" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <repeatEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>
