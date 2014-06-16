@@ -1,0 +1,9 @@
+{
+	'MoveStopDefault' : [ 'Default', 'DefaultBackground' ],
+	'MoveStopHover' : [ 'Hover', 'HoverBackground' ],
+	'MoveStopDisabled' : [ 'Disabled', 'DisabledBackground' ],
+	'MoveStopPressed' : [ 'Pressed', 'PressedBackground' ],
+	'MoveStopBlockDefault' : [ 'Default', 'DefaultBackground' ],
+	'MoveStopBlockDisabled' : [ 'Disabled', 'DisabledBackground' ]
+}
+
