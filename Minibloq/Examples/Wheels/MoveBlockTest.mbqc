@@ -21,7 +21,7 @@
         </LCDPrint>
         <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <MoveForward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
-                <numberConstant function="Constant" commented="false" constantValue="10" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="100" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
                 <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
             </MoveForward>
         </Move>
@@ -30,7 +30,7 @@
         </delay>
         <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
             <MoveBackward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
-                <numberConstant function="Constant" commented="false" constantValue="10" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="100" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
                 <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
             </MoveBackward>
         </Move>
