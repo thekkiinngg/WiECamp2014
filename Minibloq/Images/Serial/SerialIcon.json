@@ -1,0 +1,30 @@
+{
+	'SerialDefault' : [ 'Default', 'IconUpload' ],
+	'SerialHover' : [ 'Hover', 'IconUpload' ],
+	'SerialDisabled' : [ 'Disabled', 'IconUpload' ],
+	'SerialPressed' : [ 'Pressed', 'IconUpload' ],
+	'SerialBlockDefault' : [ 'IconUpload' ],
+	'SerialBlockDisabled' : [ 'IconUpload' ],
+	
+	'SerialPrintTextDefault' : [ 'Default', 'Icon', 'IconText' ],
+	'SerialPrintTextHover' : [ 'Hover', 'Icon', 'IconText' ],
+	'SerialPrintTextDisabled' : [ 'Disabled', 'Icon', 'IconText' ],
+	'SerialPrintTextPressed' : [ 'Pressed', 'Icon', 'IconText' ],
+	'SerialPrintTextBlockDefault' : [ 'Icon', 'IconText' ],
+	'SerialPrintTextBlockDisabled' : [ 'Icon', 'IconText' ],
+	
+	'SerialPrintNumberDefault' : [ 'Default', 'Icon', 'IconNumber' ],
+	'SerialPrintNumberHover' : [ 'Hover', 'Icon', 'IconNumber' ],
+	'SerialPrintNumberDisabled' : [ 'Disabled', 'Icon', 'IconNumber' ],
+	'SerialPrintNumberPressed' : [ 'Pressed', 'Icon', 'IconNumber' ],
+	'SerialPrintNumberBlockDefault' : [ 'Icon', 'IconNumber' ],
+	'SerialPrintNumberBlockDisabled' : [ 'Icon', 'IconNumber' ],
+	
+	'SerialReadDefault' : [ 'Default', 'IconDownload' ],
+	'SerialReadHover' : [ 'Hover', 'IconDownload' ],
+	'SerialReadDisabled' : [ 'Disabled', 'IconDownload' ],
+	'SerialReadPressed' : [ 'Pressed', 'IconDownload' ],
+	'SerialReadBlockDefault' : [ 'IconDownload' ],
+	'SerialReadBlockDisabled' : [ 'IconDownload' ]
+}
+
