@@ -12,8 +12,8 @@ viewBox="0 0 5000 5000"
     .fil1 {fill:#282828}
     .fil0 {fill:#2D5D8A}
     .fil2 {fill:#3966B1}
-    .fil4 {fill:#828282}
-    .fil5 {fill:#828282;fill-rule:nonzero}
+    .fil4 {fill:white}
+    .fil5 {fill:white;fill-rule:nonzero}
    ]]>
   </style>
  </defs>
