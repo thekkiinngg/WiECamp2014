@@ -1,0 +1,37 @@
+{
+	'ServoDefault' : [ 'Default', 'Gear' ],
+	'ServoHover' : [ 'Hover', 'Gear' ],
+	'ServoDisabled' : [ 'Disabled', 'Gear' ],
+	'ServoPressed' : [ 'Pressed', 'Gear' ],
+	'ServoBlockDefault' : [ 'Gear' ],
+	'ServoBlockDisabled' : [ 'Gear' ],
+	
+	'ServoLeftDefault' : [ 'Default', 'Left' ],
+	'ServoLeftHover' : [ 'Hover', 'Left' ],
+	'ServoLeftDisabled' : [ 'Disabled', 'Left' ],
+	'ServoLeftPressed' : [ 'Pressed', 'Left' ],
+	'ServoLeftBlockDefault' : [ 'Left' ],
+	'ServoLeftBlockDisabled' : [ 'Left' ],
+
+	'ServoRightDefault' : [ 'Default', 'Right' ],
+	'ServoRightHover' : [ 'Hover', 'Right' ],
+	'ServoRightDisabled' : [ 'Disabled', 'Right' ],
+	'ServoRightPressed' : [ 'Pressed', 'Right' ],
+	'ServoRightBlockDefault' : [ 'Right' ],
+	'ServoRightBlockDisabled' : [ 'Right' ],
+	
+	'ServoCenterDefault' : [ 'Default', 'Center' ],
+	'ServoCenterHover' : [ 'Hover', 'Center' ],
+	'ServoCenterDisabled' : [ 'Disabled', 'Center' ],
+	'ServoCenterPressed' : [ 'Pressed', 'Center' ],
+	'ServoCenterBlockDefault' : [ 'Center' ],
+	'ServoCenterBlockDisabled' : [ 'Center' ],
+
+	'ServoAngleDefault' : [ 'Default', 'Angle' ],
+	'ServoAngleHover' : [ 'Hover', 'Angle' ],
+	'ServoAngleDisabled' : [ 'Disabled', 'Angle' ],
+	'ServoAnglePressed' : [ 'Pressed', 'Angle' ],
+	'ServoAngleBlockDefault' : [ 'Angle' ],
+	'ServoAngleBlockDisabled' : [ 'Angle' ]
+}
+
