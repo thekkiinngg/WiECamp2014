@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="39"/>
+    </properties>
+    <variables>
+        <uss/>
+        <distThresh/>
+    </variables>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <VariableInit function="Setter" commented="false" constantValue="uss" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <ping function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <VariableInit function="Setter" commented="false" constantValue="distThresh" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="15" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableInit>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </while>
+        <Comment function="Code" commented="false" constantValue="Look straight ahead to start" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Servo function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </Servo>
+        <Comment function="Code" commented="false" constantValue="If there is something in front of Sparki less than distThres cm away..." paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberLowerThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="uss" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <VariableGetter function="Getter" commented="false" instanceName="distThresh" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberLowerThan>
+        </if>
+        <Comment function="Code" commented="false" constantValue="...and if the reading is not -1 (means nothing is seen)..." paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberUnequal function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="uss" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberNegative function="Operation" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                    <numberConstant function="Constant" commented="false" constantValue="1" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberNegative>
+            </numberUnequal>
+        </if>
+        <Comment function="Code" commented="false" constantValue="Then stop and look to the left side to see if there is room to pass" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveStop function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </Move>
+        <Servo function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberNegative function="Operation" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </numberNegative>
+        </Servo>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="100" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <Comment function="Code" commented="false" constantValue="Now, if we still see something, just stay here and wait for the guy to move" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <if function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberLowerThan function="Operation" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <ping function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberAdd function="Operation" commented="false" paramsCount="2" hasAddParamsButton="true" loadAction="load">
+                    <VariableGetter function="Getter" commented="false" instanceName="distThresh" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                    <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                </numberAdd>
+            </numberLowerThan>
+        </if>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveStop function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </Move>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <Comment function="Code" commented="false" constantValue="otherwise, the way is clear to pass, so do a passing maneuver" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Servo function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="0" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </Servo>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveInPlaceTurnLeft function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveInPlaceTurnLeft>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveForward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="180" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveForward>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveInPlaceTurnRight function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveInPlaceTurnRight>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveForward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="180" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveForward>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveInPlaceTurnRight function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveInPlaceTurnRight>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveForward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="180" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveForward>
+        </Move>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveInPlaceTurnLeft function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <numberConstant function="Constant" commented="false" constantValue="45" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveInPlaceTurnLeft>
+        </Move>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <else function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <Move function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <MoveForward function="Setter" commented="false" paramsCount="2" hasAddParamsButton="false" loadAction="load">
+                <MoveInfinite function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+                <numberConstant function="Constant" commented="false" constantValue="80" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </MoveForward>
+        </Move>
+        <endIf function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDClear function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDPrintNumber function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+                <VariableGetter function="Getter" commented="false" instanceName="uss" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+            </LCDPrintNumber>
+        </LCDPrint>
+        <LCDPrint function="Setter" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <LCDUpdate function="Setter" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </LCDPrint>
+        <VariableSetter function="Setter" commented="false" instanceName="uss" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <ping function="Sensor" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </VariableSetter>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="100" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>
